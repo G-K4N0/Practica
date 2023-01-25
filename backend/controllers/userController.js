@@ -28,7 +28,7 @@ export const createUser = async (req, res) =>{
         await userModel.create(req.body);
         res.json(
             {
-                "message":"Registro creado"
+                "message":"Usuario creado"
             });
     } catch (error) {
         res.json({message:error.message});
@@ -46,7 +46,7 @@ export const updateUser = async (req, res) => {
         });
         res.json(
             {
-                "message":"Registro actualizado"
+                "message":"Usuario actualizado"
             });
     } catch (error) {
         res.json({message:error.message});
@@ -63,7 +63,7 @@ export const deleteUser = async (req, res) => {
         });
         res.json(
             {
-                "message":"Registro eliminado"
+                "message":"Usuario eliminado"
             });
     } catch (error) {
         res.json({message:error.message});

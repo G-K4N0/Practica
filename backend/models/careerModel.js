@@ -12,4 +12,6 @@ const careerModel = db.define('career',{
             type:DataTypes.STRING,
             allowNull:false
         }
-}); 
+});
+
+export default careerModel;

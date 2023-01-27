@@ -26,7 +26,12 @@ const timeModel = db.define('time',{
         {
             type:DataTypes.SMALLINT,
             allowNull:false
-        }
+        },
+    idUser:
+    {
+        type:DataTypes.SMALLINT,
+        allowNull:false
+    }
 });
 
 export default timeModel;

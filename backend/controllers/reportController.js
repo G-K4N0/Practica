@@ -1,4 +1,3 @@
-import labModel from "../models/labModel";
 import reportModel from "../models/reportModel.js"
 
 export const getAllReports = async (req, res) => {

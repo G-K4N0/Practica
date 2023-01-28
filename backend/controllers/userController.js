@@ -17,7 +17,7 @@ export const getUser = async (req, res) => {
                 id:req.params.id
             }
         });
-        res.json(user);
+        res.json(user[0]);
     } catch (error) {
         res.json({message:error.message});
     }

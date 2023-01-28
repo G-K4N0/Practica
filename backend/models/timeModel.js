@@ -2,6 +2,10 @@ import db from "../database/db.js";
 import { DataTypes } from "sequelize";
 
 const timeModel = db.define('time',{
+    id:{
+        type:DataTypes.INTEGER,
+        primaryKey:true
+    },
     day:
         {
         type:DataTypes.STRING,

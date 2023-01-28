@@ -2,11 +2,10 @@ import db from "../database/db.js";
 import { DataTypes } from "sequelize";
 
 const labModel = db.define('lab',{
-    idLab:
-        {
-            type:DataTypes.SMALLINT,
-            allowNull:false
-        },
+    id:{
+        type:DataTypes.SMALLINT,
+        primaryKey:true
+    },
     name:
         {
             type:DataTypes.STRING,

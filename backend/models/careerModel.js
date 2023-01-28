@@ -2,11 +2,10 @@ import db from "../database/db.js";
 import { DataTypes } from "sequelize";
 
 const careerModel = db.define('career',{
-    idCareer:
-        {
-            type:DataTypes.SMALLINT,
-            allowNull:false
-        },
+    id:{
+        type:DataTypes.SMALLINT,
+        primaryKey:true
+    },
     name:
         {
             type:DataTypes.STRING,

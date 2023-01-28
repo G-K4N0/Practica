@@ -2,11 +2,10 @@ import db from "../database/db.js";
 import { DataTypes } from "sequelize";
 
 const reportModel = db.define('report',{
-    idReport:
-        {
-            type:DataTypes.INTEGER,
-            allowNull:false
-        },
+    id:{
+        type:DataTypes.INTEGER,
+        primaryKey:true
+    },
     note:
         {
             type:DataTypes.TEXT,
@@ -14,8 +13,7 @@ const reportModel = db.define('report',{
         },
     suggestion:
         {
-            type:DataTypes.TEXT,
-            allowNull:false
+            type:DataTypes.TEXT
         }
 });
 

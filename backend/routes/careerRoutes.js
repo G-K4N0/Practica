@@ -1,4 +1,4 @@
-import { express } from "express";
+import  express  from 'express';
 import { createCareer, deletCareer, getAllCareers, getCareer, updateCareer } from '../controllers/careerController.js'
 
 const routerCareer = express.Router();

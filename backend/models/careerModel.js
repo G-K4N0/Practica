@@ -4,7 +4,8 @@ import { DataTypes } from "sequelize";
 const careerModel = db.define('career',{
     id:{
         type:DataTypes.SMALLINT,
-        primaryKey:true
+        primaryKey:true,
+        autoIncrement: true
     },
     name:
         {

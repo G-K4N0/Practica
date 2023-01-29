@@ -4,7 +4,8 @@ import { DataTypes } from "sequelize";
 const reportModel = db.define('report',{
     id:{
         type:DataTypes.INTEGER,
-        primaryKey:true
+        primaryKey:true,
+        autoIncrement: true
     },
     note:
         {

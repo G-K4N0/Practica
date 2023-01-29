@@ -3,9 +3,9 @@ import { createTime, deleteTime, getAllTimes, getTime, updateTime } from '../con
 const timeRoute = express.Router();
 
 timeRoute.get('/',getAllTimes);
-timeRoute.get('/:id', getTime);
-timeRoute.post('/', createTime);
-timeRoute.put('/:id',updateTime);
-timeRoute.delete('/:id',deleteTime);
+timeRoute.get('/times/:id', getTime);
+timeRoute.post('/times', createTime);
+timeRoute.put('/times/:id',updateTime);
+timeRoute.delete('/times/:id',deleteTime);
 
 export default timeRoute;

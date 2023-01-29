@@ -4,12 +4,8 @@ import { DataTypes } from "sequelize";
 const timeModel = db.define('time',{
     id:{
         type:DataTypes.INTEGER,
-        primaryKey:true
-    },
-    day:
-        {
-        type:DataTypes.STRING,
-        allowNull:false
+        primaryKey:true,
+        autoIncrement: true
         },
     timeInit:
         {
@@ -21,9 +17,19 @@ const timeModel = db.define('time',{
             type:DataTypes.STRING,
             allowNull:false
         },
-    idTopic:
+    day:
         {
             type:DataTypes.STRING,
+            allowNull:false
+        },
+    idGroup:
+        {
+            type:DataTypes.TINYINT,
+            allowNull:false
+        },
+    idTopic:
+        {
+            type:DataTypes.INTEGER,
             allowNull:false
         },
     idLab:

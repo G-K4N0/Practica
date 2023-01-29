@@ -4,7 +4,8 @@ import { DataTypes } from "sequelize";
 const userModel = db.define('users',{
     id:{
         type:DataTypes.INTEGER,
-        primaryKey:true
+        primaryKey:true,
+        autoIncrement: true
     },
     name: {type:DataTypes.STRING},
     nickname:{type:DataTypes.STRING},

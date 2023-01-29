@@ -31,7 +31,7 @@ export const createUser = async (req, res) =>{
                 "message":"Usuario creado"
             });
     } catch (error) {
-        res.json({message:error.message});
+        res.json({"message":"Error en la sintaxis"});
     }
 }
 

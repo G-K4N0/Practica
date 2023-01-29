@@ -4,7 +4,8 @@ import { DataTypes } from "sequelize";
 const labModel = db.define('lab',{
     id:{
         type:DataTypes.SMALLINT,
-        primaryKey:true
+        primaryKey:true,
+        autoIncrement: true
     },
     name:
         {

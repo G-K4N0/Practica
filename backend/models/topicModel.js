@@ -3,8 +3,9 @@ import { DataTypes } from "sequelize";
 
 const topicModel = db.define('topic',{
     id:{
-        type:DataTypes.STRING,
-        primaryKey:true
+        type:DataTypes.INTEGER,
+        primaryKey:true,
+        autoIncrement: true
     },
     name:
         {

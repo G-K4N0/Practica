@@ -2,6 +2,8 @@ import express from 'express';
 import cors from  'cors';
 import db from './database/db.js';
 
+import { verifyToken } from './controllers/authController.js';
+
 import careerRoutes from './routes/careerRoutes.js';
 import groupRoutes from './routes/groupRoute.js';
 import labRoutes from './routes/labRoutes.js'
@@ -13,29 +15,32 @@ import timeRoutes from './routes/timeRoutes.js'
 import topicRoutes from './routes/topicRoutes.js'
 import typeRoutes from './routes/typeRoutes.js';
 import userRoutes from './routes/userRoutes.js'
+import login from './routes/login.js'
 import cookieParser from 'cookie-parser';
-import dotenv from 'dotenv'
+import  dotenv from 'dotenv';
+dotenv.config({ path: './.env'});
+
+
 const app = express();
 const PORT = 8000;
 
-dotenv.config({path:'./.env'});
-
-//app.use(cookieParser);
+app.use(cookieParser());
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-app.use('/careers',careerRoutes);
-app.use('/groups',groupRoutes);
-app.use('/labs',labRoutes);
-app.use('/mods',modRoutes);
-app.use('/phases',phaseRoutes);
+app.use('/careers',verifyToken,careerRoutes);
+app.use('/groups',verifyToken,groupRoutes);
+app.use('/labs',verifyToken,labRoutes);
+app.use('/mods',verifyToken,modRoutes);
+app.use('/phases',verifyToken,phaseRoutes);
 app.use('/reports',reportRoutes);
-app.use('/semesters',semesterRoutes);
+app.use('/semesters',verifyToken,semesterRoutes);
 app.use('/',timeRoutes);
-app.use('/topics',topicRoutes);
-app.use('/types',typeRoutes);
-app.use('/users',userRoutes);
+app.use('/topics',verifyToken,topicRoutes);
+app.use('/types',verifyToken,typeRoutes);
+app.use('/users',verifyToken,userRoutes);
+app.use('/',login);
 
 app.listen(PORT,()=>{
 console.log(`Escuchando en el puerto ${PORT}`);

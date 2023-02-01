@@ -10,7 +10,7 @@ const userModel = db.define('users',{
     name: {type:DataTypes.STRING},
     nickname:{type:DataTypes.STRING},
     password: {type:DataTypes.STRING},
-    privileges:{type:DataTypes.STRING}
+    privileges:{type:DataTypes.TINYINT}
 });
 
 export default userModel;

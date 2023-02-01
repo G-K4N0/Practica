@@ -1,4 +1,5 @@
 import userModel from "../models/userModel.js"
+import bcrypt from 'bcryptjs';
 
 
 export const getAllUsers= async (req,res)=>{
@@ -25,13 +26,24 @@ export const getUser = async (req, res) => {
 
 export const createUser = async (req, res) =>{
     try {
-        await userModel.create(req.body);
+
+        const user_name = req.body.name;
+        const user_nickname = req.body.nickname;
+        const user_password = req.body.password;
+        const user_privileges = req.body.privileges;
+        let passhash = await bcrypt.hash(user_password,8);
+        await userModel.create({
+            name:user_name,
+            nickname:user_nickname,
+            password:passhash,
+            privileges:user_privileges
+    });
         res.json(
             {
                 "message":"Usuario creado"
             });
     } catch (error) {
-        res.json({"message":"Error en la sintaxis"});
+        res.json({"message": error.message});
     }
 }
 

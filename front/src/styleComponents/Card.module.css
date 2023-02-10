@@ -1,0 +1,36 @@
+.cardContainer{
+    border-radius: 25px;
+    border: solid 1px;
+    width: 460px;
+    height: 350px;
+    left: 18px;
+    top: 142px;
+    background: #020432;
+}
+
+.cardContainer h2{
+    letter-spacing: 0.07em;
+    color: aliceblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: normal;
+    line-height: 16px;
+}
+
+.nameLab h1 {
+    letter-spacing: 0.07em;
+    color: aliceblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.materiaName{
+    color:beige;
+    background: #363535;
+    width: 419px;
+    height: 35.87px;
+    border-radius: 25px;
+    margin: 1rem;
+}
+

@@ -1,0 +1,20 @@
+.containerDetails{
+    height:200px ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 5px;
+    margin-right: 15px;
+}
+
+.containerImage{
+    width: fit-content;
+    align-content: flex-start;
+}
+
+.containerImage img {
+    border-radius: 25px;
+    width: 176px;
+    height: 172px;
+    margin-left: 10%;
+}

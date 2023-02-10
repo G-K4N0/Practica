@@ -1,0 +1,28 @@
+.scheduleContainer{
+    border-radius: 25px;
+    width: 200px;
+    height: 200px;
+}
+
+.scheduleContainer h1 {
+    color: azure;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 14px;
+}
+
+.scheduleContainer h2 {
+    font-style: normal;
+    font-size: 20px;
+    line-height: 14px;
+}
+
+.hour{
+    background: #363535;
+    border-radius: 25px;
+    width: auto;
+    height: 27px;
+    color: beige;
+}

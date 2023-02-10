@@ -13,3 +13,12 @@ En cuanto al modelo de base de datos, está pensado en un modelo relacional, el 
 
 ## Vistas
 Y las vistas iniciales de la aplicación se ubican el el siguiente enlace --> [Vistas](https://www.figma.com/file/NavfCDMZE39QVeT9cE5lKr/Componentes?node-id=0%3A1&t=CKkRKHFzGJTKAVaq-1)
+
+# REACT
+
+## Vistas
+
+![inicio](./images/inicio.png)
+![login](./images/login.png)
+![inicio](./images/sesion.png)
+

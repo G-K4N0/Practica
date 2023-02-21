@@ -1,4 +1,4 @@
-import styles from '../styleComponents/Card.module.css'
+import styles from '../styleComponents/Card.module.scss'
 import { Details } from './Details'
 export function Card () {
   return (

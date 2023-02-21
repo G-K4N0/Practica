@@ -1,5 +1,9 @@
 import React from 'react'
 import { useJwt } from 'react-jwt'
+import { Navbar } from '../home/Navbar'
+import { Sidebar } from './Sidebar'
+import styles from '../styleComponents/Sidebar.module.scss'
+import { Outlet } from 'react-router-dom'
 
 export const withAuth = (WrappedComponent) => {
   return class extends React.Component {
@@ -22,7 +26,7 @@ export const withAuth = (WrappedComponent) => {
       const { isLoading, isAuthenticated } = this.state
 
       if (isLoading) return null
-      if (!isAuthenticated) return < redirect to="/login" />
+      if (!isAuthenticated) return <redirect to="/login" />
 
       return <WrappedComponent {...this.props} />
     }
@@ -31,29 +35,16 @@ export const withAuth = (WrappedComponent) => {
 
 export const Dashboard = () => {
   return (
-    <div className='container-inicio'>
-    <aside>
-      <nav>
-        <ul>
-          <li>Inicio</li>
-          <li>Usuarios</li>
-          <li>Materias</li>
-          <li>Carreras</li>
-          <li>Labroratorios</li>
-          <li>Horarios</li>
-          <li>Avisos</li>
-          <li>Estadisticas</li>
-        </ul>
-      </nav>
-    </aside>
-    <section>
-      <article>
-        article
-      </article>
-    </section>
-    <aside>
-      aside
-    </aside>
-  </div>
+    <div>
+      <Navbar/>
+      <div className={styles.container}>
+        <div className={styles.sidebar}>
+          <Sidebar />
+        </div>
+        <div className= {styles.outletDash}>
+          <Outlet/>
+        </div>
+      </div>
+    </div>
   )
 }

@@ -2,8 +2,9 @@ import db from '../database/db.js';
 import promisfy from 'util';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
-import userModel from '../models/userModel.js';
+import Usuario from '../models/Usuario.js'
 import  dotenv from 'dotenv';
+import Privilegio from '../models/Privilegio.js';
 dotenv.config({ path: './.env'});
 
 export const login =  async (req, res) => {
@@ -14,10 +15,16 @@ export const login =  async (req, res) => {
         if (!user_name || !user_pass){
             res.json({"message": "No dejes ningun campo vacio"});}
 
-            const user = await userModel.findOne({where:{
+            const user = await Usuario.findOne({
+                attributes:['id','nickName','password'],
+                include:[{
+                    model:Privilegio,
+                    attributes:['name']
+                }],
+                where:{
                 nickname:req.body.nickname
             }});
-            
+
             const validPass = await bcrypt.compare(user_pass,user.password);
             
             if (!user ||  !validPass) {
@@ -30,16 +37,14 @@ export const login =  async (req, res) => {
             const token = jwt.sign({id:id},process.env.JWT_SECRET,{
                         expiresIn:process.env.JWT_TIME_EXPIRE
                     });
-
-            console.log(token);
             
             const cookiesOptions={
                 expires: new Date(
                     Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 *60 * 60 *1000),
                     httpOnly:true}
-                    res.cookie('panteras', token, cookiesOptions);
+                    res.cookie('token', token, cookiesOptions);
 
-                    res.json({"message":`Bienvenido `});
+                    res.json({"user": user,"token" : token});
 
     } catch (error) {
         console.log(error)
@@ -65,6 +70,6 @@ export const verifyToken = async(req, res, next) => {
 }
 
 export const logout = (req,res) =>{
-    res.clearCookie('panteras');
+    res.clearCookie('token');
     return res.redirect('/')
 }
